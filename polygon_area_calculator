@@ -64,19 +64,4 @@ def create_spend_chart(categories):
 
     chart = ""
 
-    for i in range(100, -1, -10):
-        chart += f"{i:>3}|"
-        for percent in percentages:
-            if percent >= i:
-                chart += " o "
-            else:
-                chart += "   "
-        chart += " \n"
-
-    chart += "    " + "-" * (len(categories) * 3 + 1) + "\n"
-
-    max_len = max(len(category.name) for category in categories)
-
     
-
-   
