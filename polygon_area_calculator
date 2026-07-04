@@ -47,8 +47,4 @@ def create_spend_chart(categories):
         spent.append(amount)
         total_spent += amount
 
-    percentages = []
-    for amount in spent:
-        percentages.append(int((amount / total_spent) * 100) // 10 * 10)
-
-    chart = ""
+    
