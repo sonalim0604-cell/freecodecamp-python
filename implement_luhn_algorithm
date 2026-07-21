@@ -1,0 +1,22 @@
+def  verify_card_number(digits):
+    digits = digits.replace(" ", "").replace("-","")
+
+    total = 0
+    invert_digits = digits[::-1]
+    
+    for i in range(len(invert_digits)):
+        digit = int(invert_digits[i])
+        
+        if i % 2 == 1:
+            digit *= 2
+
+            if digit > 9:
+                digit -= 9
+             
+
+        total += digit
+
+    if total % 10 == 0:
+        return "VALID!"
+    else:
+        return "INVALID!" 
