@@ -1,0 +1,10 @@
+def selection_sort(items):
+    n = len(items) 
+    for i in range(n-1):
+        smallest_index = i
+        for j in range(i+1,n):
+            if items[j] < items[smallest_index]:
+                smallest_index = j 
+        if smallest_index != i:
+            items[i], items[smallest_index] = items[smallest_index], items[i]
+    return items
