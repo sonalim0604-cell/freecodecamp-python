@@ -1,0 +1,23 @@
+def hanoi_solver(n):
+    rods = [ 
+        list(range(n,0,-1)),
+        [],
+        []
+    ]
+    moves = []
+    moves.append(f"{rods[0]} {rods[1]} {rods[2]}")
+
+    def solve(disks ,source, auxillary,destination):
+        if disks == 0:
+            return
+
+        solve(disks -1, source, destination, auxillary )
+
+        disk = rods[source].pop()
+        rods[destination].append(disk)
+        moves.append(f"{rods[0]} {rods[1]} {rods[2]}")
+
+        solve(disks -1, auxillary, source, destination)
+
+    solve(n,0, 1, 2)
+    return "\n".join(moves)
