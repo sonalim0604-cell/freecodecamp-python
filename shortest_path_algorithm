@@ -45,4 +45,5 @@ def shortest_path(matrix, start_node, target_node=None):
  
     distances, paths = shortest_path(adj_matrix, 0)
     return distances , paths
+shortest_path(adj_matrix, 0, 5)
         
