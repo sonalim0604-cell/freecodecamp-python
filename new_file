@@ -12,10 +12,6 @@ def dfs_n_queens(n):
                 return False 
     
         return True 
-    
-    def dfs(row, current):
-        if row == n:
-            solutions.append(current[:])
-            return 
+   
 
         
