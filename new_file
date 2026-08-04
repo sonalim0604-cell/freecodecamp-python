@@ -8,10 +8,7 @@ def dfs_n_queens(n):
             if c == col:
                 return False
 
-            if abs(r - row) == abs(c - col):
-                return False 
-    
-        return True 
+          
    
 
         
