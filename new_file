@@ -1,10 +1,17 @@
-def dfs_n_queens(n):
-    if n < 1:
-        return [] 
-   
-            
-
-          
-   
-
-        
+dna = input("Enter the DNA sequence: ")
+dna_length = len(dna)
+print("The length of the DNA sequence is:", dna_length)
+c_content = dna.count('C')
+print("The number of 'C' nucleotides in the DNA sequence is:", c_content)
+g_content = dna.count('G')
+print("The number of 'G' nucleotides in the DNA sequence is:", g_content)
+t_content = dna.count('T')
+print("The number of 'T' nucleotides in the DNA sequence is:", t_content)
+a_content = dna.count('A')
+print("The number of 'A' nucleotides in the DNA sequence is:", a_content)
+sum_cg = c_content + g_content
+percentage_cg = (sum_cg / dna_length) * 100
+print("The percentage of 'C' and 'G' nucleotides in the DNA sequence is:", percentage_cg, "%")
+sum_at = a_content + t_content
+percentage_at = (sum_at / dna_length) * 100
+print("The percentage of 'A' and 'T' nucleotides in the DNA sequence is:", percentage_at, "%")
