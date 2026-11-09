@@ -1,0 +1,57 @@
+
+class BankAccount:
+    def __init__(self, name, acc_no, bal):
+        self.name = name
+        self.acc = acc_no
+        self.bal = bal
+
+    def deposit(self, amount):
+        self.bal += amount
+        print("Amount credited:", amount)
+        print("Current balance:", self.bal)
+
+    def withdraw(self, amount):
+        self.bal -= amount
+        print("Amount withdrawn:", amount)
+        print("Current balance:", self.bal)
+
+
+class SavingsAccount(BankAccount):
+
+    def withdraw(self, amount):
+        if self.bal - amount >= 1000:
+            self.bal -= amount
+            print("Amount withdrawn:", amount)
+            print("Current balance:", self.bal)
+        else:
+            print("Minimum balance of 1000 must be maintained")
+
+
+class CurrentAccount(BankAccount):
+
+    def withdraw(self, amount):
+        if self.bal - amount >= -5000:
+            self.bal -= amount
+            print("Amount withdrawn:", amount)
+            print("Current balance:", self.bal)
+        else:
+            print("Overdraft limit exceeded")
+
+
+# Creating objects
+s1 = SavingsAccount("John", "1897", 10000)
+c1 = CurrentAccount("Nitin", "5678", 5000)
+
+# Savings account operations
+print("\n--- Savings Account ---")
+s1.deposit(2000)
+s1.withdraw(5000)
+s1.withdraw(7000)
+
+# Current account operations
+print("\n--- Current Account ---")
+c1.deposit(1000)
+c1.withdraw(8000)
+c1.withdraw(4000)
+
+
