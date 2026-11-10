@@ -1,0 +1,18 @@
+class Mammal:
+    def __init__(self, has_fur):
+        self.fur = has_fur
+
+class Bird:
+    def __init__(self, wings, eggs):
+        self.wings = wings
+        self.eggs = eggs
+
+class Bat(Mammal, Bird):
+    def __init__(self, has_fur, wings, eggs,color):
+        Mammal.__init__(self, has_fur)
+        Bird.__init__(self, wings, eggs)
+        self.color = color
+
+b1 = Bat("no","yes","no", "black")
+print(b1.wings)
+print(b1.color)
