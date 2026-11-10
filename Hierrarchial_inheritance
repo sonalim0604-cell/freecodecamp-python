@@ -1,0 +1,30 @@
+class Cone:
+    def __init__(self, radius, height, base):
+        self.radius = radius
+        self.height = height
+        self.base = base
+
+    def base_area(self):
+        return 3.14 * self.radius ** 2
+
+    def circumference(self):
+        return 2 * 3.14 * self.radius
+
+class Volume(Cone):
+    def __init__(self, radius,height,base):
+        super().__init__(radius, height, base)
+    def volume(self):
+        return self.base_area() * self.height/ 3
+
+class SurfaceArea(Cone):
+    def __init__(self, radius,height,base):
+        super().__init__( radius, height, base)
+    def surface_area(self):
+        return self.base_area() + 0.5 * self.circumference() * self.base
+c1 = Cone(3, 5 ,7)
+c2 =  Volume(12, 3, 5)
+c3 = SurfaceArea(8,6,3)
+print(c2.volume())
+print(c1.radius)
+print(c3. surface_area())
+print(c1.base_area())
