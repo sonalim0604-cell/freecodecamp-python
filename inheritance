@@ -1,0 +1,15 @@
+class Shape:
+    def __init__(self, color, name):
+        self.color = color
+        self.name = name
+class Triangle(Shape):
+    def __init__(self,color, name, base, height):
+        super().__init__(color, name)
+        self.base = base
+        self.height = height
+    def area(self):
+        return 0.5 * self.base *self.height
+c1 = Triangle("Red" , "Triangle" , 4, 6)
+print("Color: ", c1.color)
+print("Name:", c1.name)
+print("Area:" ,c1.area())
